@@ -39,7 +39,49 @@
   border-radius: 20px;
   padding: 15px;
   width: fit-content;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-left: 5px;
   position: relative;
+}
+.chat__receiver {
+  margin-left: auto;
+  background-color: #dcf8c6;
+}
+.chat__name {
+  position: absolute;
+  top: -15px;
+  font-weight: 800;
+  font-size: xx-small;
+}
+.chat__timestamp {
+  margin-left: 10px;
+  font-size: xx-small;
+}
+.chat__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+  border-top: 1px solid lightgrey;
+  background-color: white;
+  margin-top: -65px;
+}
+.chat__footer > form {
+  display: flex;
+  flex: 1;
+}
+.chat__footer > form > input {
+  flex: 1;
+  border-radius: 30px;
+  border: none;
+  padding: 10px;
+  background-color: #dadbd3;
+}
+.chat__footer > form > button {
+  display: none;
+}
+
+.chat__footer > .MuiSvgIcon-root {
+  color: grey;
+  padding: 10px;
 }
