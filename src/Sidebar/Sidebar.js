@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./Sidebar.css"
 import SidebarChat from '../SidebarChat/SidebarChat';
 import db from '../Firebase/Firebase';
+import { useStateValue } from '../contextapi/StateProvider';
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import ChatIcon from '@material-ui/icons/Chat';
 import { IconButton, Avatar } from '@material-ui/core';
@@ -13,6 +14,9 @@ import SearchOutlined from "@material-ui/icons/SearchOutlined";
 
 const Sidebar = () => {
     const [rooms, setRooms] = useState([]) //accordind firebase stored in array
+    const [{ user }, dispatch] = useStateValue()
+
+
 
     useEffect(() => {
         const unsubscribe = db.collection("rooms").onSnapshot((snapshot) =>
@@ -34,7 +38,8 @@ const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className='sidebar__header'>
-                <Avatar />
+                <Avatar src={user?.photoURL} />
+
                 <div className='sidebar__headerRight'>
                     <IconButton>
                         <DonutLargeIcon />
